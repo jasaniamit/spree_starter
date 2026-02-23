@@ -351,25 +351,25 @@ GEM
       signet (>= 0.16, < 2.a)
     groupdate (6.7.0)
       activesupport (>= 7.1)
-    grpc (1.78.0)
+    grpc (1.78.1)
       google-protobuf (>= 3.25, < 5.0)
       googleapis-common-protos-types (~> 1.0)
-    grpc (1.78.0-aarch64-linux-gnu)
+    grpc (1.78.1-aarch64-linux-gnu)
       google-protobuf (>= 3.25, < 5.0)
       googleapis-common-protos-types (~> 1.0)
-    grpc (1.78.0-aarch64-linux-musl)
+    grpc (1.78.1-aarch64-linux-musl)
       google-protobuf (>= 3.25, < 5.0)
       googleapis-common-protos-types (~> 1.0)
-    grpc (1.78.0-arm64-darwin)
+    grpc (1.78.1-arm64-darwin)
       google-protobuf (>= 3.25, < 5.0)
       googleapis-common-protos-types (~> 1.0)
-    grpc (1.78.0-x86_64-darwin)
+    grpc (1.78.1-x86_64-darwin)
       google-protobuf (>= 3.25, < 5.0)
       googleapis-common-protos-types (~> 1.0)
-    grpc (1.78.0-x86_64-linux-gnu)
+    grpc (1.78.1-x86_64-linux-gnu)
       google-protobuf (>= 3.25, < 5.0)
       googleapis-common-protos-types (~> 1.0)
-    grpc (1.78.0-x86_64-linux-musl)
+    grpc (1.78.1-x86_64-linux-musl)
       google-protobuf (>= 3.25, < 5.0)
       googleapis-common-protos-types (~> 1.0)
     hashie (5.1.0)
@@ -573,7 +573,7 @@ GEM
     orm_adapter (0.5.0)
     os (1.1.4)
     ostruct (0.6.3)
-    pagy (43.2.10)
+    pagy (43.3.0)
       json
       uri
       yaml
@@ -704,7 +704,7 @@ GEM
     responders (3.2.0)
       actionpack (>= 7.0)
       railties (>= 7.0)
-    retriable (3.1.2)
+    retriable (3.2.1)
     reverse_markdown (3.0.2)
       nokogiri
     rexml (3.4.4)
@@ -757,7 +757,7 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.44.0, < 2.0)
-    ruby-lsp (0.26.6)
+    ruby-lsp (0.26.7)
       language_server-protocol (~> 3.17.0)
       prism (>= 1.2, < 2.0)
       rbs (>= 3, < 5)
@@ -837,11 +837,11 @@ GEM
     solargraph-rails (1.3)
       activesupport
       solargraph (>= 0.48.0)
-    spree (5.3.3)
-      spree_api (= 5.3.3)
-      spree_cli (= 5.3.3)
-      spree_core (= 5.3.3)
-    spree_admin (5.3.3)
+    spree (5.3.4)
+      spree_api (= 5.3.4)
+      spree_cli (= 5.3.4)
+      spree_core (= 5.3.4)
+    spree_admin (5.3.4)
       active_link_to
       breadcrumbs_on_rails (~> 4.1)
       chartkick (~> 5.0)
@@ -852,26 +852,26 @@ GEM
       local_time (~> 3.0)
       mapkick-rb (~> 0.1)
       pagy (~> 43.0)
-      spree (>= 5.3.3)
+      spree (>= 5.3.4)
       stimulus-rails
       tailwindcss-rails (>= 4.0)
       tailwindcss-ruby (>= 4.0)
       tinymce-rails (~> 6.8.5)
       turbo-rails
-    spree_api (5.3.3)
+    spree_api (5.3.4)
       bcrypt (~> 3.1)
       doorkeeper (~> 5.3)
       jsonapi-serializer (~> 2.1)
       pagy (~> 43.0)
-      spree_core (= 5.3.3)
+      spree_core (= 5.3.4)
     spree_auth_devise (4.6.3)
       devise (~> 4.7)
       devise-encryptable (= 0.2.0)
       spree_core (>= 4.5.0)
       spree_extension
-    spree_cli (5.3.3)
+    spree_cli (5.3.4)
       thor (~> 1.0)
-    spree_core (5.3.3)
+    spree_core (5.3.4)
       active_storage_validations (= 1.3.0)
       activemerchant (~> 1.67)
       acts-as-taggable-on
@@ -936,8 +936,8 @@ GEM
       spree (>= 5.0)
       timecop
       webdrivers
-    spree_emails (5.3.3)
-      spree (>= 5.3.3)
+    spree_emails (5.3.4)
+      spree (>= 5.3.4)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
@@ -955,13 +955,13 @@ GEM
     spree_klaviyo (1.1.2)
       spree (>= 5.1.0.beta2)
       spree_admin (>= 5.1.0.beta2)
-    spree_page_builder (5.3.3)
-      spree (>= 5.3.3)
-      spree_admin (>= 5.3.3)
-    spree_sample (5.3.3)
+    spree_page_builder (5.3.4)
+      spree (>= 5.3.4)
+      spree_admin (>= 5.3.4)
+    spree_sample (5.3.4)
       ffaker (~> 2.9)
-      spree (>= 5.3.3)
-    spree_storefront (5.3.3)
+      spree (>= 5.3.4)
+    spree_storefront (5.3.4)
       active_link_to
       heroicon
       importmap-rails
@@ -969,8 +969,8 @@ GEM
       local_time (~> 3.0)
       mail_form
       pagy (~> 43.0)
-      spree (>= 5.3.3)
-      spree_page_builder (>= 5.3.3)
+      spree (>= 5.3.4)
+      spree_page_builder (>= 5.3.4)
       stimulus-rails
       tailwindcss-rails
       tailwindcss-ruby
@@ -989,13 +989,13 @@ GEM
     tailwindcss-rails (4.4.0)
       railties (>= 7.0.0)
       tailwindcss-ruby (~> 4.0)
-    tailwindcss-ruby (4.1.18)
-    tailwindcss-ruby (4.1.18-aarch64-linux-gnu)
-    tailwindcss-ruby (4.1.18-aarch64-linux-musl)
-    tailwindcss-ruby (4.1.18-arm64-darwin)
-    tailwindcss-ruby (4.1.18-x86_64-darwin)
-    tailwindcss-ruby (4.1.18-x86_64-linux-gnu)
-    tailwindcss-ruby (4.1.18-x86_64-linux-musl)
+    tailwindcss-ruby (4.2.0)
+    tailwindcss-ruby (4.2.0-aarch64-linux-gnu)
+    tailwindcss-ruby (4.2.0-aarch64-linux-musl)
+    tailwindcss-ruby (4.2.0-arm64-darwin)
+    tailwindcss-ruby (4.2.0-x86_64-darwin)
+    tailwindcss-ruby (4.2.0-x86_64-linux-gnu)
+    tailwindcss-ruby (4.2.0-x86_64-linux-musl)
     terminal-table (4.0.0)
       unicode-display_width (>= 1.1.1, < 4)
     thor (1.5.0)
@@ -1050,7 +1050,7 @@ GEM
       yard (>= 0.8)
     yard-solargraph (0.1.0)
       yard (~> 0.9)
-    zeitwerk (2.7.4)
+    zeitwerk (2.7.5)
 
 PLATFORMS
   aarch64-linux
@@ -1099,19 +1099,19 @@ DEPENDENCIES
   sidekiq
   solargraph
   solargraph-rails
-  spree (~> 5.3.3)
-  spree_admin (~> 5.3.3)
+  spree (~> 5.3.4)
+  spree_admin (~> 5.3.4)
   spree_delhivery!
   spree_dev_tools
-  spree_emails (~> 5.3.3)
+  spree_emails (~> 5.3.4)
   spree_google_analytics (~> 1.1)
   spree_google_products!
   spree_i18n
   spree_klaviyo (~> 1.1)
   spree_product_reviews!
   spree_razorpay_checkout!
-  spree_sample (~> 5.3.3)
-  spree_storefront (~> 5.3.3)
+  spree_sample (~> 5.3.4)
+  spree_storefront (~> 5.3.4)
   stimulus-rails
   turbo-rails
   tzinfo-data
