@@ -306,12 +306,12 @@ GEM
     geocoder (1.8.6)
       base64 (>= 0.1.0)
       csv (>= 3.0.0)
-    github_changelog_generator (1.16.4)
+    github_changelog_generator (1.17.0)
       activesupport
       async (>= 1.25.0)
       async-http-faraday
+      benchmark
       faraday-http-cache
-      multi_json
       octokit (~> 4.6)
       rainbow (>= 2.2.1)
       rake (>= 10.0)
@@ -579,7 +579,7 @@ GEM
     orm_adapter (0.5.0)
     os (1.1.4)
     ostruct (0.6.3)
-    pagy (43.3.2)
+    pagy (43.3.3)
       json
       uri
       yaml
@@ -596,7 +596,7 @@ GEM
     pg (1.6.3-x86_64-darwin)
     pg (1.6.3-x86_64-linux)
     pg (1.6.3-x86_64-linux-musl)
-    phonelib (0.10.16)
+    phonelib (0.10.17)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -726,14 +726,14 @@ GEM
     rspec-mocks (3.13.8)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-rails (8.0.3)
+    rspec-rails (8.0.4)
       actionpack (>= 7.2)
       activesupport (>= 7.2)
       railties (>= 7.2)
-      rspec-core (~> 3.13)
-      rspec-expectations (~> 3.13)
-      rspec-mocks (~> 3.13)
-      rspec-support (~> 3.13)
+      rspec-core (>= 3.13.0, < 5.0.0)
+      rspec-expectations (>= 3.13.0, < 5.0.0)
+      rspec-mocks (>= 3.13.0, < 5.0.0)
+      rspec-support (>= 3.13.0, < 5.0.0)
     rspec-retry (0.6.2)
       rspec-core (> 3.3)
     rspec-support (3.13.7)
@@ -751,7 +751,7 @@ GEM
       rubocop-ast (>= 1.49.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.49.0)
+    rubocop-ast (1.49.1)
       parser (>= 3.3.7.2)
       prism (~> 1.7)
     rubocop-performance (1.26.1)
@@ -764,7 +764,7 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.44.0, < 2.0)
-    ruby-lsp (0.26.7)
+    ruby-lsp (0.26.8)
       language_server-protocol (~> 3.17.0)
       prism (>= 1.2, < 2.0)
       rbs (>= 3, < 5)
@@ -844,11 +844,11 @@ GEM
     solargraph-rails (1.3)
       activesupport
       solargraph (>= 0.48.0)
-    spree (5.3.4)
-      spree_api (= 5.3.4)
-      spree_cli (= 5.3.4)
-      spree_core (= 5.3.4)
-    spree_admin (5.3.4)
+    spree (5.3.5)
+      spree_api (= 5.3.5)
+      spree_cli (= 5.3.5)
+      spree_core (= 5.3.5)
+    spree_admin (5.3.5)
       active_link_to
       breadcrumbs_on_rails (~> 4.1)
       chartkick (~> 5.0)
@@ -859,26 +859,26 @@ GEM
       local_time (~> 3.0)
       mapkick-rb (~> 0.1)
       pagy (~> 43.0)
-      spree (>= 5.3.4)
+      spree (>= 5.3.5)
       stimulus-rails
       tailwindcss-rails (>= 4.0)
       tailwindcss-ruby (>= 4.0)
       tinymce-rails (~> 6.8.5)
       turbo-rails
-    spree_api (5.3.4)
+    spree_api (5.3.5)
       bcrypt (~> 3.1)
       doorkeeper (~> 5.3)
       jsonapi-serializer (~> 2.1)
       pagy (~> 43.0)
-      spree_core (= 5.3.4)
+      spree_core (= 5.3.5)
     spree_auth_devise (4.6.3)
       devise (~> 4.7)
       devise-encryptable (= 0.2.0)
       spree_core (>= 4.5.0)
       spree_extension
-    spree_cli (5.3.4)
+    spree_cli (5.3.5)
       thor (~> 1.0)
-    spree_core (5.3.4)
+    spree_core (5.3.5)
       active_storage_validations (= 1.3.0)
       activemerchant (~> 1.67)
       acts-as-taggable-on
@@ -910,6 +910,7 @@ GEM
       rexml
       ruby-oembed (~> 0.18)
       safely_block (~> 0.4)
+      ssrf_filter (~> 1.0)
       state_machines-activemodel (~> 0.100)
       state_machines-activerecord (~> 0.100)
       stringex
@@ -943,11 +944,11 @@ GEM
       spree (>= 5.0)
       timecop
       webdrivers
-    spree_emails (5.3.4)
-      spree (>= 5.3.4)
+    spree_emails (5.3.5)
+      spree (>= 5.3.5)
     spree_extension (1.0.2)
       thor (~> 1.0)
-    spree_google_analytics (1.1.1)
+    spree_google_analytics (1.1.2)
       spree (>= 5.1.0)
       spree_admin (>= 5.1.0)
       spree_extension
@@ -961,13 +962,13 @@ GEM
     spree_klaviyo (1.1.2)
       spree (>= 5.1.0.beta2)
       spree_admin (>= 5.1.0.beta2)
-    spree_page_builder (5.3.4)
-      spree (>= 5.3.4)
-      spree_admin (>= 5.3.4)
-    spree_sample (5.3.4)
+    spree_page_builder (5.3.5)
+      spree (>= 5.3.5)
+      spree_admin (>= 5.3.5)
+    spree_sample (5.3.5)
       ffaker (~> 2.9)
-      spree (>= 5.3.4)
-    spree_storefront (5.3.4)
+      spree (>= 5.3.5)
+    spree_storefront (5.3.5)
       active_link_to
       heroicon
       importmap-rails
@@ -975,12 +976,13 @@ GEM
       local_time (~> 3.0)
       mail_form
       pagy (~> 43.0)
-      spree (>= 5.3.4)
-      spree_page_builder (>= 5.3.4)
+      spree (>= 5.3.5)
+      spree_page_builder (>= 5.3.5)
       stimulus-rails
       tailwindcss-rails
       tailwindcss-ruby
       turbo-rails
+    ssrf_filter (1.3.0)
     state_machines (0.100.4)
     state_machines-activemodel (0.101.0)
       activemodel (>= 7.2)
@@ -995,13 +997,13 @@ GEM
     tailwindcss-rails (4.4.0)
       railties (>= 7.0.0)
       tailwindcss-ruby (~> 4.0)
-    tailwindcss-ruby (4.2.0)
-    tailwindcss-ruby (4.2.0-aarch64-linux-gnu)
-    tailwindcss-ruby (4.2.0-aarch64-linux-musl)
-    tailwindcss-ruby (4.2.0-arm64-darwin)
-    tailwindcss-ruby (4.2.0-x86_64-darwin)
-    tailwindcss-ruby (4.2.0-x86_64-linux-gnu)
-    tailwindcss-ruby (4.2.0-x86_64-linux-musl)
+    tailwindcss-ruby (4.2.1)
+    tailwindcss-ruby (4.2.1-aarch64-linux-gnu)
+    tailwindcss-ruby (4.2.1-aarch64-linux-musl)
+    tailwindcss-ruby (4.2.1-arm64-darwin)
+    tailwindcss-ruby (4.2.1-x86_64-darwin)
+    tailwindcss-ruby (4.2.1-x86_64-linux-gnu)
+    tailwindcss-ruby (4.2.1-x86_64-linux-musl)
     terminal-table (4.0.0)
       unicode-display_width (>= 1.1.1, < 4)
     thor (1.5.0)
@@ -1104,19 +1106,19 @@ DEPENDENCIES
   sidekiq
   solargraph
   solargraph-rails
-  spree (~> 5.3.4)
-  spree_admin (~> 5.3.4)
+  spree (~> 5.3.5)
+  spree_admin (~> 5.3.5)
   spree_delhivery!
   spree_dev_tools
-  spree_emails (~> 5.3.4)
+  spree_emails (~> 5.3.5)
   spree_google_analytics (~> 1.1)
   spree_google_products!
   spree_i18n
   spree_klaviyo (~> 1.1)
   spree_product_reviews!
   spree_razorpay_checkout!
-  spree_sample (~> 5.3.4)
-  spree_storefront (~> 5.3.4)
+  spree_sample (~> 5.3.5)
+  spree_storefront (~> 5.3.5)
   stimulus-rails
   turbo-rails
   tzinfo-data
