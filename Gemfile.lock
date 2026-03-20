@@ -1,4 +1,15 @@
 GIT
+  remote: https://github.com/olympusone/spree_cod_payment.git
+  revision: fa48dc7cb41a6e0be7b24efe12cd0d43276fe08e
+  branch: main
+  specs:
+    spree_cod_payment (2.1.6)
+      spree (>= 5.2.0)
+      spree_admin (>= 5.2.0)
+      spree_extension
+      spree_storefront (>= 5.2.0)
+
+GIT
   remote: https://github.com/umeshravani/spree_delhivery.git
   revision: fe4f856dd2e203b15e115568f268a99bc9654ad7
   branch: main
@@ -36,10 +47,10 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_razorpay.git
-  revision: 8c6d2de84687b8eb001e087e86d8742da06b3275
+  revision: 458e26fbb63be73cc7a1c84d9b0a021176d58002
   branch: main
   specs:
-    spree_razorpay_checkout (0.1.3)
+    spree_razorpay_checkout (0.2.0)
       razorpay (~> 3.2)
       spree_core (>= 5.2)
       spree_extension
@@ -143,7 +154,7 @@ GEM
     any_ascii (0.3.3)
     ar_lazy_preload (2.1.1)
     ast (2.4.3)
-    async (2.38.0)
+    async (2.38.1)
       console (~> 1.29)
       fiber-annotation
       io-event (~> 1.11)
@@ -170,7 +181,7 @@ GEM
     awesome_print (1.9.2)
     backport (1.2.0)
     base64 (0.3.0)
-    bcrypt (3.1.21)
+    bcrypt (3.1.22)
     benchmark (0.5.0)
     bigdecimal (4.0.1)
     bindex (0.8.1)
@@ -306,7 +317,7 @@ GEM
     geocoder (1.8.6)
       base64 (>= 0.1.0)
       csv (>= 3.0.0)
-    github_changelog_generator (1.17.0)
+    github_changelog_generator (1.18.0)
       activesupport
       async (>= 1.25.0)
       async-http-faraday
@@ -425,7 +436,7 @@ GEM
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.19.1)
+    json (2.19.2)
     json-schema (6.2.0)
       addressable (~> 2.8)
       bigdecimal (>= 3.1, < 5)
@@ -476,7 +487,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     local_time (3.0.3)
     logger (1.7.0)
-    loofah (2.25.0)
+    loofah (2.25.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.9.0)
@@ -491,7 +502,7 @@ GEM
     mapkick-rb (0.2.0)
     marcel (1.1.0)
     matrix (0.4.3)
-    mcp (0.8.0)
+    mcp (0.9.0)
       json-schema (>= 4.1)
     method_source (1.1.0)
     metrics (0.15.0)
@@ -534,21 +545,21 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.5)
-    nokogiri (1.19.1-aarch64-linux-gnu)
+    nokogiri (1.19.2-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.19.1-aarch64-linux-musl)
+    nokogiri (1.19.2-aarch64-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.19.1-arm-linux-gnu)
+    nokogiri (1.19.2-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.19.1-arm-linux-musl)
+    nokogiri (1.19.2-arm-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.19.1-arm64-darwin)
+    nokogiri (1.19.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.1-x86_64-darwin)
+    nokogiri (1.19.2-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.1-x86_64-linux-gnu)
+    nokogiri (1.19.2-x86_64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.19.1-x86_64-linux-musl)
+    nokogiri (1.19.2-x86_64-linux-musl)
       racc (~> 1.4)
     oauth2 (2.0.18)
       faraday (>= 0.17.3, < 4.0)
@@ -579,7 +590,7 @@ GEM
     orm_adapter (0.5.0)
     os (1.1.4)
     ostruct (0.6.3)
-    pagy (43.3.3)
+    pagy (43.4.1)
       json
       uri
       yaml
@@ -696,7 +707,7 @@ GEM
       tsort
     redis (5.4.1)
       redis-client (>= 0.22.0)
-    redis-client (0.27.0)
+    redis-client (0.28.0)
       connection_pool
     regexp_parser (2.11.3)
     reline (0.6.3)
@@ -786,15 +797,15 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sentry-rails (6.4.1)
+    sentry-rails (6.5.0)
       railties (>= 5.2.0)
-      sentry-ruby (~> 6.4.1)
-    sentry-ruby (6.4.1)
+      sentry-ruby (~> 6.5.0)
+    sentry-ruby (6.5.0)
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
       logger
-    sentry-sidekiq (6.4.1)
-      sentry-ruby (~> 6.4.1)
+    sentry-sidekiq (6.5.0)
+      sentry-ruby (~> 6.5.0)
       sidekiq (>= 5.0)
     sidekiq (8.1.1)
       connection_pool (>= 3.0.0)
@@ -982,6 +993,11 @@ GEM
       tailwindcss-rails
       tailwindcss-ruby
       turbo-rails
+    spree_stripe (1.5.1)
+      spree (>= 5.3.0)
+      spree_admin (>= 5.3.0)
+      stripe (>= 10.1, < 19)
+      stripe_event (~> 2.14)
     ssrf_filter (1.3.0)
     state_machines (0.100.4)
     state_machines-activemodel (0.101.0)
@@ -994,6 +1010,10 @@ GEM
       railties (>= 6.0.0)
     stringex (2.8.6)
     stringio (3.2.0)
+    stripe (18.4.2)
+    stripe_event (2.14.0)
+      activesupport (>= 3.1)
+      stripe (>= 2.8, < 19)
     tailwindcss-rails (4.4.0)
       railties (>= 7.0.0)
       tailwindcss-ruby (~> 4.0)
@@ -1108,6 +1128,7 @@ DEPENDENCIES
   solargraph-rails
   spree (~> 5.3.5)
   spree_admin (~> 5.3.5)
+  spree_cod_payment!
   spree_delhivery!
   spree_dev_tools
   spree_emails (~> 5.3.5)
@@ -1119,6 +1140,7 @@ DEPENDENCIES
   spree_razorpay_checkout!
   spree_sample (~> 5.3.5)
   spree_storefront (~> 5.3.5)
+  spree_stripe
   stimulus-rails
   turbo-rails
   tzinfo-data
