@@ -101,7 +101,7 @@ gem 'sentry-ruby'
 gem 'sentry-rails'
 gem 'sentry-sidekiq'
 
-# ActiveMerchant (Required for Razorpay/Stripe in 5.4)
+# ActiveMerchant (Required for Razorpay/Stripe in 5.4.1)
 gem 'activemerchant'
 
 # Spree gems Optional
