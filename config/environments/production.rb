@@ -83,29 +83,36 @@ Rails.application.configure do
       enable_starttls_auto: true
     }
   end
-  
-  # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { 
-    host: ENV.fetch("APP_HOST", "thewallx.com"), 
-    protocol: "https" 
-  }
 
   # Raise errors if the email server rejects the email (helps debugging)
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
 
-  # Google Workspace / Gmail SMTP Settings
+  # --------------------------------
+  # Mailer (Mailtrap Live SMTP)
+  # --------------------------------
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
+    address:              "live.smtp.mailtrap.io",
     port:                 587,
-    domain:               ENV.fetch('SMTP_DOMAIN', 'thewallx.com'),
-    user_name:            ENV['SMTP_USERNAME'],
-    password:             ENV['SMTP_PASSWORD'],
+    domain:               "nozfragrances.com",
+    user_name:            "api",
+    password:             ENV["MAILTRAP_API_TOKEN"],
     authentication:       :plain,
     enable_starttls_auto: true
   }
-  
+
+  # Set host to be used by links generated in mailer templates.
+  config.action_mailer.default_url_options = { 
+    host: ENV.fetch("APP_HOST", "nozfragrances.com"), 
+    protocol: "https" 
+  }
+
+  config.action_mailer.asset_host = "https://www.nozfragrances.com"
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
