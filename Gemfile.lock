@@ -10,17 +10,6 @@ GIT
       spree_storefront (>= 5.2.0)
 
 GIT
-  remote: https://github.com/umeshravani/spree_delhivery.git
-  revision: fe4f856dd2e203b15e115568f268a99bc9654ad7
-  branch: main
-  specs:
-    spree_delhivery (0.0.1)
-      faraday
-      faraday_middleware
-      spree_core (>= 5.2.0)
-      spree_extension
-
-GIT
   remote: https://github.com/umeshravani/spree_google_products
   revision: 837ef7ce76726e111c19dbe2fdee61a2355055e0
   branch: main
@@ -282,8 +271,6 @@ GEM
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
     faraday-retry (1.0.4)
-    faraday_middleware (1.2.1)
-      faraday (~> 1.0)
     ffaker (2.25.0)
     ffi (1.17.4-aarch64-linux-gnu)
     ffi (1.17.4-aarch64-linux-musl)
@@ -1146,7 +1133,6 @@ DEPENDENCIES
   spree (~> 5.4.1)
   spree_admin (~> 5.4.1)
   spree_cod_payment!
-  spree_delhivery!
   spree_dev_tools
   spree_emails (~> 5.4.1)
   spree_google_analytics (~> 1.1)
