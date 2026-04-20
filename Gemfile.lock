@@ -46,7 +46,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_razorpay.git
-  revision: 4af5a8fa036a638be41b67854864c8a794cf4a20
+  revision: 9ea94fd2714d82e5b98fd49d4c5ecc0e23ba8d4b
   branch: main
   specs:
     spree_razorpay_checkout (0.2.0)
