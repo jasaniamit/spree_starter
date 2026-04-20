@@ -46,7 +46,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_razorpay.git
-  revision: c219da0d1c04e88bece65b9961a026298bde2db3
+  revision: fd97c00a2852c47faf2c516dcacc74a2d48e6e54
   branch: main
   specs:
     spree_razorpay_checkout (0.2.0)
@@ -569,7 +569,7 @@ GEM
     octokit (4.25.1)
       faraday (>= 1, < 3)
       sawyer (~> 0.9)
-    oj (3.16.17)
+    oj (3.17.0)
       bigdecimal (>= 3.0)
       ostruct (>= 0.2)
     omniauth (2.1.4)
