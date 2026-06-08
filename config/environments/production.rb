@@ -95,15 +95,15 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.smtp_settings = {
-    address:              "live.smtp.mailtrap.io",
-    port:                 587,
-    domain:               "nozfragrances.com",
-    user_name:            "api",
-    password:             ENV["MAILTRAP_API_TOKEN"],
-    authentication:       :plain,
-    enable_starttls_auto: true
-  }
+  #config.action_mailer.smtp_settings = {
+   # address:              "live.smtp.mailtrap.io",
+    #port:                 587,
+    #domain:               "nozfragrances.com",
+    #user_name:            "api",
+    #password:             ENV["MAILTRAP_API_TOKEN"],
+    #authentication:       :plain,
+    #enable_starttls_auto: true
+  #} 
 
   # Set host to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { 
