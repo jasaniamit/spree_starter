@@ -51,6 +51,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
 
+  gem 'bundler-audit', require: false
   gem 'brakeman'
   gem 'dotenv-rails', '~> 3.1'
   gem 'rubocop', '~> 1.23'
@@ -90,41 +91,48 @@ group :test do
   gem 'rails-controller-testing'
 end
 
+# Admin UI Tailwind CSS
+gem 'tailwindcss-rails'
+
+# Infrastructure
+gem 'aws-sdk-s3', require: false
+gem 'lograge'
+
 # Use Sidekiq for background jobs
 gem 'sidekiq'
 
+gem 'multi_json'
+
 # Use Devise for authentication
 gem "devise"
+
+# Use CORS for Next.JS
+gem 'rack-cors'
 
 # Sentry for error/performance monitoring
 gem 'sentry-ruby'
 gem 'sentry-rails'
 gem 'sentry-sidekiq'
 
-# ActiveMerchant (Required for Razorpay/Stripe in 5.4.1)
+# ActiveMerchant (Required for Razorpay/Stripe in 5.4)
 gem 'activemerchant'
 
 # Spree gems Optional
 gem "spree_multi_store", "~> 1.0"
 gem "spree_posts", "~> 1.0"
 gem 'jsonapi-rspec', group: :test
-gem 'spree_legacy_api_v2'
+#gem 'spree_legacy_api_v2'
 
 # Spree gems
-spree_opts = '~> 5.4.1'
+spree_opts = '~> 5.4.3'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_admin", spree_opts
-gem "spree_storefront", spree_opts
-gem "spree_page_builder", spree_opts
+
 gem "spree_i18n"
 gem "spree_stripe"
-gem "spree_google_analytics", "~> 1.1"
-gem "spree_klaviyo", "~> 1.1"
-#gem "spree_paypal_checkout", "~> 0.5"
 
 gem 'spree_product_reviews', git: 'https://github.com/umeshravani/spree_product_reviews.git', branch: 'main'
 gem 'spree_razorpay_checkout', git: 'https://github.com/umeshravani/spree_razorpay.git', branch: 'main'
-gem 'spree_cod_payment', git: 'https://github.com/olympusone/spree_cod_payment.git', branch: 'main'
 gem 'spree_google_products', git: 'https://github.com/umeshravani/spree_google_products', branch: 'main'
 #gem 'spree_delhivery', github: 'umeshravani/spree_delhivery'
