@@ -1,0 +1,30 @@
+<h1>
+  <%= Spree.t('invitation_mailer.greeting', user_name: @invitation.invitee&.first_name || @invitation.email) %>
+</h1>
+<p>
+  <%= Spree.t('invitation_mailer.invitation_email.body', inviter_name: @invitation.inviter.name, resource_name: @invitation.resource.name) %>
+</p>
+<p>
+  <%= Spree.t('invitation_mailer.invitation_email.link_description') %>
+</p>
+
+<% if spree.respond_to?(:admin_invitation_url) %>
+  <%
+    # FIX: Spree::Store#formatted_url returns a *full* URL (e.g.
+    # "https://www.nozfragrances.com"), but Rails' `host:` URL option
+    # expects a *bare hostname* (e.g. "www.nozfragrances.com"). Passing
+    # the full URL straight into `host:` produced a malformed link like
+    # "https://www.nozfragrances.comadmin/invitations/..." (missing the
+    # slash before the path). We strip the scheme here and pass it via
+    # `protocol:` explicitly instead, so Rails builds the URL correctly.
+    store_host = @invitation.store.formatted_url.to_s.sub(%r{\Ahttps?://}, '')
+  %>
+  <p>
+    <%= link_to Spree.t(:accept), spree.admin_invitation_url(@invitation, token: @invitation.token, host: store_host, protocol: 'https') %>
+  </p>
+<% end %>
+
+<p>
+  <%= Spree.t('invitation_mailer.thanks') %><br />
+  <%= current_store.name %>
+</p>
