@@ -60,18 +60,16 @@ Rails.application.configure do
   }
   config.action_mailer.asset_host = "https://www.nozfragrances.com"
 
-  # Example SMTP (replace with your provider).
-  if ENV['SENDGRID_API_KEY'].present?
-    config.action_mailer.smtp_settings = {
-      user_name: 'apikey',
-      password: ENV['SENDGRID_API_KEY'],
-      domain: ENV.fetch('SENDGRID_DOMAIN', "nozfragrances.com"),
-      address: 'smtp.sendgrid.net',
-      port: 587,
-      authentication: :plain,
-      enable_starttls_auto: true
-    }
-  end
+  # Mailtrap SMTP configuration
+  config.action_mailer.smtp_settings = {
+    address:              "live.smtp.mailtrap.io",
+    port:                 587,
+    domain:               "nozfragrances.com",
+    user_name:            "api",
+    password:             ENV["MAILTRAP_API_TOKEN"],
+    authentication:       :plain,
+    enable_starttls_auto: true
+  }
 
   # I18n.
   config.i18n.fallbacks = true
