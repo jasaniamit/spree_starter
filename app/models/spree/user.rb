@@ -1,16 +1,12 @@
 class Spree::User < Spree.base_class
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
   include Spree::UserAddress
   include Spree::UserMethods
   include Spree::UserPaymentSource
 
-  # spree_auth_devise devise configuration
-  devise :database_authenticatable if Spree::Auth::Config[:database_authenticatable]
-  devise :recoverable if Spree::Auth::Config[:recoverable]
-  devise :registerable if Spree::Auth::Config[:registerable]
-  devise :confirmable if Spree::Auth::Config[:confirmable]
-  devise :validatable if Spree::Auth::Config[:validatable]
-  devise :rememberable, :trackable, :encryptable, encryptor: 'authlogic_sha512'
-
+  # Override to accept optional current_store argument (required by spree_auth_devise controllers)
   def self.send_reset_password_instructions(attributes = {}, current_store = nil)
     recoverable = find_or_initialize_with_errors(reset_password_keys, attributes, :not_found)
     recoverable.send_reset_password_instructions(current_store) if recoverable.persisted?
