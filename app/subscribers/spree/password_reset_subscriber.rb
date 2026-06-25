@@ -1,20 +1,20 @@
 module Spree
-  class PasswordResetSubscriber < Spree::Subscriber
-    subscribes_to 'customer.password_reset_requested'
+  class PasswordResetSubscriber
+    include Spree::Webhooks::Subscriber
 
-    def handle(event)
-      email = event.payload['email']
-      token = event.payload['reset_token']
-      store    = Spree::Store.find(event.store_id)
+    on 'customer.password_reset_requested' do |event|
+      user  = Spree::User.find_by(id: event.data['user_id'])
+      token = event.data['token']
 
-      user = Spree.user_class.find_by(email: email)
-      return unless user
+      next unless user && token
 
-      # Build the frontend reset URL correctly
-      reset_url = "https://#{store.url}/in/en/account/reset-password?token=#{CGI.escape(token)}"
+      # Get host from env, strip any trailing slash to be safe
+      host  = ENV.fetch('STORE_HOST', 'www.nozfragrances.com').sub(%r{/+\z}, '')
+      path  = "/in/en/account/reset-password"
 
-      # Send a simple mailer with the correct link
-      Spree::PasswordResetMailer.reset_password(user, reset_url, store).deliver_later
+      reset_url = "https://#{host}#{path}?token=#{token}"
+
+      Spree::PasswordResetMailer.reset_password(user, reset_url).deliver_later
     end
   end
 end
