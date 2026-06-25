@@ -118,13 +118,13 @@ gem 'sentry-sidekiq'
 gem 'activemerchant'
 
 # Spree gems Optional
-gem "spree_multi_store", "~> 1.0"
+gem "spree_multi_store", github: "spree/spree_multi_store", branch: "main"
 gem "spree_posts", "~> 1.0"
 gem 'jsonapi-rspec', group: :test
 #gem 'spree_legacy_api_v2'
 
 # Spree gems
-spree_opts = '~> 5.4.3'
+spree_opts = '~> 5.5.0'
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_admin", spree_opts

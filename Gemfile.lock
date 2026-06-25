@@ -1,6 +1,15 @@
 GIT
+  remote: https://github.com/spree/spree_multi_store.git
+  revision: 9e4c5f04f3d9fe9da2e5f286a67a615a86f98025
+  branch: main
+  specs:
+    spree_multi_store (1.0.1)
+      spree (>= 5.4.0.beta)
+      spree_admin (>= 5.4.0.beta)
+
+GIT
   remote: https://github.com/umeshravani/spree_google_products
-  revision: 681f3e1408e96325128ad547c3462d9f6325fa60
+  revision: dc3dd9c93a7b409fa3e4e4a57b8d474c3303642b
   branch: main
   specs:
     spree_google_products (1.0)
@@ -15,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_product_reviews.git
-  revision: 6ef7a8e8aa7d20c4e5d743335952b94be0e45c89
+  revision: bb0a4d39dda213ac644b71a76b22971a445aa34d
   branch: main
   specs:
     spree_product_reviews (1.2.0)
@@ -132,11 +141,11 @@ GEM
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
     alba (3.10.0)
-    anonymous_loader (0.1.1)
-      version_gem (~> 1.1, >= 1.1.12)
+    anonymous_loader (0.1.2)
+      version_gem (~> 1.1, >= 1.1.13)
     ar_lazy_preload (2.1.2)
     ast (2.4.3)
-    async (2.39.0)
+    async (2.40.0)
       console (~> 1.29)
       fiber-annotation
       io-event (~> 1.11)
@@ -164,7 +173,7 @@ GEM
       activerecord (>= 4.0.0, < 8.2)
     awesome_print (1.9.2)
     aws-eventstream (1.4.0)
-    aws-partitions (1.1261.0)
+    aws-partitions (1.1262.0)
     aws-sdk-core (3.252.0)
       aws-eventstream (~> 1, >= 1.3.0)
       aws-partitions (~> 1, >= 1.992.0)
@@ -315,7 +324,7 @@ GEM
       octokit (~> 4.6)
       rainbow (>= 2.2.1)
       rake (>= 10.0)
-    globalid (1.3.0)
+    globalid (1.4.0)
       activesupport (>= 6.1)
     google-ads-googleads (24.0.0)
       gapic-common (~> 0.6)
@@ -411,7 +420,7 @@ GEM
       nokogiri (>= 1.6)
     io-console (0.8.2)
     io-endpoint (0.17.2)
-    io-event (1.16.2)
+    io-event (1.16.4)
     io-stream (0.13.1)
     irb (1.18.0)
       pp (>= 0.6.0)
@@ -423,7 +432,7 @@ GEM
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
     jmespath (1.6.2)
-    json (2.19.9)
+    json (2.20.0)
     jsonapi-rspec (0.0.11)
       rspec-core
       rspec-expectations
@@ -491,7 +500,7 @@ GEM
     mini_magick (5.3.1)
       logger
     mini_mime (1.1.5)
-    mini_racer (0.21.3)
+    mini_racer (0.21.4)
       libv8-node (~> 24.12.0.1)
     minitest (6.0.6)
       drb (~> 2.0)
@@ -597,7 +606,7 @@ GEM
     pg (1.6.3-x86_64-linux)
     pg (1.6.3-x86_64-linux-musl)
     phonelib (0.10.22)
-    pp (0.6.3)
+    pp (0.6.4)
       prettyprint
     prettyprint (0.2.0)
     prism (1.9.0)
@@ -846,10 +855,10 @@ GEM
     solargraph-rails (1.3)
       activesupport
       solargraph (>= 0.48.0)
-    spree (5.4.3)
-      spree_api (= 5.4.3)
-      spree_core (= 5.4.3)
-    spree_admin (5.4.3)
+    spree (5.5.0)
+      spree_api (= 5.5.0)
+      spree_core (= 5.5.0)
+    spree_admin (5.5.0)
       active_link_to
       breadcrumbs_on_rails (~> 4.1)
       chartkick (~> 5.0)
@@ -860,23 +869,23 @@ GEM
       local_time (~> 3.0)
       mapkick-rb (~> 0.1)
       ruby-oembed (~> 0.18)
-      spree (>= 5.4.3)
+      spree (>= 5.5.0)
       stimulus-rails
       tailwindcss-rails (>= 4.0)
       tailwindcss-ruby (>= 4.0)
       tinymce-rails (~> 6.8.5)
       turbo-rails
-    spree_api (5.4.3)
+    spree_api (5.5.0)
       alba (~> 3.0)
       oj (~> 3.16)
-      spree_core (= 5.4.3)
+      spree_core (= 5.5.0)
       typelizer (~> 0.11.0)
     spree_auth_devise (4.6.3)
       devise (~> 4.7)
       devise-encryptable (= 0.2.0)
       spree_core (>= 4.5.0)
       spree_extension
-    spree_core (5.4.3)
+    spree_core (5.5.0)
       active_storage_validations (>= 1.3, < 4)
       acts-as-taggable-on
       acts_as_list (>= 0.8)
@@ -942,8 +951,8 @@ GEM
       spree (>= 5.4.0.alpha)
       timecop
       webdrivers
-    spree_emails (5.4.3)
-      spree (>= 5.4.3)
+    spree_emails (5.5.0)
+      spree (>= 5.5.0)
     spree_extension (1.0.2)
       thor (~> 1.0)
     spree_i18n (5.3.2)
@@ -952,9 +961,6 @@ GEM
       rails-i18n
       spree_core (>= 4.2.0.rc3)
       spree_extension
-    spree_multi_store (1.0.1)
-      spree (>= 5.4.0.beta)
-      spree_admin (>= 5.4.0.beta)
     spree_posts (1.0.0)
       spree (>= 5.4.0.beta)
       spree_admin (>= 5.4.0.beta)
@@ -1021,7 +1027,7 @@ GEM
     useragent (0.16.11)
     validates_zipcode (0.6.0)
       activemodel (>= 4.2.0)
-    version_gem (1.1.12)
+    version_gem (1.1.13)
     wannabe_bool (0.7.1)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -1034,7 +1040,7 @@ GEM
       rubyzip (>= 1.3.0)
       selenium-webdriver (~> 4.0, < 4.11)
     websocket (1.2.11)
-    websocket-driver (0.8.1)
+    websocket-driver (0.8.2)
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -1102,13 +1108,13 @@ DEPENDENCIES
   sidekiq
   solargraph
   solargraph-rails
-  spree (~> 5.4.3)
-  spree_admin (~> 5.4.3)
+  spree (~> 5.5.0)
+  spree_admin (~> 5.5.0)
   spree_dev_tools
-  spree_emails (~> 5.4.3)
+  spree_emails (~> 5.5.0)
   spree_google_products!
   spree_i18n
-  spree_multi_store (~> 1.0)
+  spree_multi_store!
   spree_posts (~> 1.0)
   spree_product_reviews!
   spree_razorpay_checkout!
