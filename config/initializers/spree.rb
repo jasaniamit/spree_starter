@@ -7,8 +7,9 @@ Spree.dependencies do |dependencies|
 end
 
 Rails.application.config.after_initialize do
-  # Send password reset email when Spree fires the password reset event
-  Spree::Event.subscribe('customer.password_reset_requested') do |event|
+  # Send password reset email when Spree fires customer.password_reset_requested
+  ActiveSupport::Notifications.subscribe('spree.customer.password_reset_requested') do |*args|
+    event       = ActiveSupport::Notifications::Event.new(*args)
     payload     = event.payload
     email       = payload[:email] || payload['email']
     reset_token = payload[:reset_token] || payload['reset_token']
