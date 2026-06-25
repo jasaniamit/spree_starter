@@ -84,7 +84,6 @@ Rails.application.config.after_initialize do
   # Register password reset email subscriber
   # Spree 5 API fires a webhook event instead of sending email directly.
   # This subscriber listens for that event and sends the reset email via UserMailer.
-  Spree.subscribers << Spree::PasswordResetSubscriber
 end
 
 Spree.user_class = 'Spree::User'
