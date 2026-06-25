@@ -80,26 +80,6 @@ Rails.application.config.after_initialize do
   # Rails.application.config.spree.page_blocks << Spree::PageBlocks::BigRedButtonToCallSales
 
   # Rails.application.config.spree_storefront.head_partials << 'spree/shared/that_js_snippet_that_marketing_forced_me_to_include'
-
-  # Fix password reset URL: Spree concatenates store URL + locale path without a slash,
-  # producing "nozfragrances.comin/en/...". We patch the mailer's reset_url here.
-  Spree::PasswordResetMailer.class_eval do
-    def reset_password(user, reset_url)
-      # Rebuild the URL cleanly from APP_HOST env var, ignoring whatever
-      # broken URL Spree constructed via store.url + locale path concatenation.
-      host      = ENV.fetch('APP_HOST', 'www.nozfragrances.com').sub(%r{/+\z}, '')
-      token     = reset_url.to_s.split('token=').last
-      fixed_url = "https://#{host}/in/en/account/reset-password?token=#{token}"
-
-      @user      = user
-      @reset_url = fixed_url
-
-      mail(
-        to:      user.email,
-        subject: "Reset your #{Spree::Store.default.name} password"
-      )
-    end
-  end
 end
 
 Spree.user_class = 'Spree::User'
