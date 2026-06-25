@@ -7,6 +7,12 @@ Spree.dependencies do |dependencies|
 end
 
 Rails.application.config.after_initialize do
+  # This explicitly grants admin users their missing privileges in Spree 5.5
+  if Spree.respond_to?(:permissions)
+    Spree.permissions.assign(:default, [Spree::PermissionSets::DefaultCustomer])
+    Spree.permissions.assign(:admin, [Spree::PermissionSets::SuperUser])
+  end
+
   # Send password reset email when Spree fires customer.password_reset_requested
   ActiveSupport::Notifications.subscribe('spree.customer.password_reset_requested') do |*args|
     event       = ActiveSupport::Notifications::Event.new(*args)

@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_google_products
-  revision: 6b7eed0cfaa21cb80584829e0abbfc788cfd93ef
+  revision: 2015ed28fb9e8ea0710d6745a5ee3fbab2fbc2e5
   branch: main
   specs:
     spree_google_products (1.0)
@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/umeshravani/spree_product_reviews.git
-  revision: 4aba00de697b3658f82b75eeac3691084b999e73
+  revision: 456c2805cc7f5a4a9c8e27a21194be5e21fd79f4
   branch: main
   specs:
     spree_product_reviews (1.2.0)
