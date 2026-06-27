@@ -74,6 +74,11 @@ Rails.application.configure do
   # I18n.
   config.i18n.fallbacks = true
 
+  # Active Record Encryption (required for encrypted webhook secrets, etc.)
+  config.active_record.encryption.primary_key       = ENV.fetch("AR_ENCRYPTION_PRIMARY_KEY")
+  config.active_record.encryption.deterministic_key  = ENV.fetch("AR_ENCRYPTION_DETERMINISTIC_KEY")
+  config.active_record.encryption.key_derivation_salt = ENV.fetch("AR_ENCRYPTION_KEY_DERIVATION_SALT")
+
   # Schema.
   config.active_record.dump_schema_after_migration = false
   config.active_record.attributes_for_inspect = [ :id ]
