@@ -1,54 +1,67 @@
 # syntax = docker/dockerfile:1
+
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
 # docker build -t my-app .
 # docker run -d -p 80:80 -p 443:443 --name my-app -e SECRET_KEY_BASE=<value> my-app
+
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
 ARG RUBY_VERSION=3.4.7
 FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
+
 # Rails app lives here
 WORKDIR /rails
+
 # Install base packages
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y curl libjemalloc2 postgresql-client libpq-dev libvips redis-tools && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle"
+
 # Throw-away build stage to reduce size of final image
 FROM base AS build
+
 # Install packages needed to build gems
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git pkg-config zlib1g-dev libyaml-dev && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
+
 # Copy application code
 COPY . .
-# Precompiling assets for production without requiring secret RAILS_MASTER_KEY.
-# AR_ENCRYPTION_* values are throwaway placeholders needed only so production.rb
-# can boot during this build step (it calls ENV.fetch on them unconditionally) -
-# they are never written to the image and have no effect on the real running
-# container, which gets its real encryption keys from the runtime environment.
+
+# Precompiling assets for production without requiring secret RAILS_MASTER_KEY
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+
 RUN SECRET_KEY_BASE_DUMMY=1 \
     AR_ENCRYPTION_PRIMARY_KEY=build_time_dummy_key \
     AR_ENCRYPTION_DETERMINISTIC_KEY=build_time_dummy_key \
     AR_ENCRYPTION_KEY_DERIVATION_SALT=build_time_dummy_salt \
     ./bin/rails assets:precompile
+
+
 # Final stage for app image
 FROM base
+
 # Copy built artifacts: gems, application
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --from=build /rails /rails
+
 # Run and own only the runtime files as a non-root user for security
 RUN groupadd --system --gid 1000 rails && \
     useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 USER 1000:1000
+
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-# Start Sidekiq background worker
-CMD ["bundle", "exec", "sidekiq"]    
+CMD ["./bin/rails", "server", "-b", "0.0.0.0"]
