@@ -1,15 +1,12 @@
-<h1>
-  <%= Spree.t('export_mailer.greeting', user_name: @export.user&.first_name) %>
-</h1>
-<p>
-  <%= Spree.t('export_mailer.export_done.message') %>
-</p>
-<% if spree.respond_to?(:admin_export_url) %>
-  <p>
-    <%= link_to @export.attachment.filename, spree.admin_export_url(@export) %>
-  </p>
-<% end %>
-<p>
-  <%= Spree.t('export_mailer.thanks') %><br />
-  <%= "#{current_store.name}" %>
-</p>
+module Spree::ExportMailerDecorator
+  # Spree dynamically sets ActionMailer::Base.default_url_options[:host] to
+  # current_store.url before sending mail (so storefront links work in
+  # customer-facing emails). In a headless setup the backend admin lives on
+  # a different host than the storefront, so admin-only emails like this one
+  # need their own fixed host instead of inheriting the store's URL.
+  def default_url_options
+    { host: "server.nozfragrances.com", protocol: "https" }
+  end
+end
+
+Spree::ExportMailer.prepend Spree::ExportMailerDecorator
