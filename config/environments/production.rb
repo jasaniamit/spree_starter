@@ -55,10 +55,10 @@ Rails.application.configure do
 
   # Default URL for mailers.
   config.action_mailer.default_url_options = {
-    host: "server.nozfragrances.com",
+    host: "www.nozfragrances.com",
     protocol: "https"
   }
-  config.action_mailer.asset_host = "https://server.nozfragrances.com"
+  config.action_mailer.asset_host = "https://www.nozfragrances.com"
 
   # Mailtrap SMTP configuration
   config.action_mailer.smtp_settings = {
@@ -95,7 +95,7 @@ Rails.application.configure do
 
   # Global default URL options (critical for Spree Admin).
   Rails.application.routes.default_url_options = {
-    host: "server.nozfragrances.com",
+    host: "www.nozfragrances.com",
     protocol: "https"
   }
 end
