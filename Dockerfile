@@ -37,8 +37,6 @@ RUN bundle install && \
 COPY . .
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
-
 RUN SECRET_KEY_BASE_DUMMY=1 \
     AR_ENCRYPTION_PRIMARY_KEY=build_time_dummy_key \
     AR_ENCRYPTION_DETERMINISTIC_KEY=build_time_dummy_key \
