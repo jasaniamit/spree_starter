@@ -1,6 +1,6 @@
 # Configure Spree Preferences
 Spree.config do |config|
-  config.send_core_emails = false
+  config.send_core_emails = true
 end
 
 Spree.dependencies do |dependencies|
