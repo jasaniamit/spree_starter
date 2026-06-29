@@ -62,11 +62,11 @@ Rails.application.configure do
 
   # Mailtrap SMTP configuration
   config.action_mailer.smtp_settings = {
-    address:              "live.smtp.mailtrap.io",
+    address:              "smtp.resend.com",
     port:                 587,
     domain:               "nozfragrances.com",
     user_name:            "api",
-    password:             ENV["MAILTRAP_API_TOKEN"],
+    password:             ENV["RESEND_API_KEY"],
     authentication:       :plain,
     enable_starttls_auto: true
   }
